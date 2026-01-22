@@ -2,9 +2,9 @@ name: hello github actions
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
-  pull_request: [ main ]
+  pull_request: [ master ]
 
   workflow_dispatch:
 
