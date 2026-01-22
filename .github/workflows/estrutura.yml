@@ -22,7 +22,7 @@ jobs:
         run: |
           echo " == ESTRUTURA DE DIRETORIOS E ARQUIVOS .github/workflows == "
           ls -la .github/workflows
-          acho ""
+          echo ""
           echo " == TOTAL DE WORKFLOWS: $(ls -1 .github/workflows | wc -l) == "
           
       - name: elementos obrigatorios do workflow
