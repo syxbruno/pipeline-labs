@@ -1,0 +1,44 @@
+name: "estrutura de diretorios e arquivos"
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+env:
+  JAVA_VERSION: '21'
+
+jobs:
+  mostrar-estrutura:
+    name: "mostrar estrutura basica"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: mostrar estrutura .github/workflows
+        run: |
+          echo " == ESTRUTURA DE DIRETORIOS E ARQUIVOS .github/workflows == "
+          ls -la .github/workflows
+          acho ""
+          echo " == TOTAL DE WORKFLOWS: $(ls -1 .github/workflows | wc -l) == "
+          
+      - name: elementos obrigatorios do workflow
+        run: |
+          echo " == ELEMENTOS OBRIGATORIOS == "
+          echo " 1 - nome do workflow "
+          echo " 2 - evento que dispara o workflow "
+          echo " 3 - ambiente onde job sera executado "
+          echo " 4 - passos individuais dentro de um job "
+          echo ""
+          echo " == TOTAL DE ELEMENTOS OBRIGATORIOS E IGUAL A 5 == "
+
+      - name: variaveis e contexto
+        run: |
+          echo " variaveis env: @{ env.JAVA_VERSION } "
+          echo " 1 - definicao de variaveis de ambiente "
+          echo " 2 - acesso a informacoes do workflow, job, runner, etc "
+          echo ""
+          echo " == TOTAL DE VARIAVEIS E CONTEXTO E IGUAL A 2 == "
